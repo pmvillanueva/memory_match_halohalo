@@ -1,0 +1,110 @@
+body {
+    /*position: relative;*/
+    /*width: 100%;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    background-image: url('images/halobg5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+h3 {
+    display: inline-block;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+button {
+    padding: 4px 50px;
+    margin-left: 60px;
+}
+
+hr {
+    width: 1000px;
+}
+
+#content {
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    position: relative;
+    margin: 2px auto;
+    height: 14vw;
+    width: 10vw;
+    opacity: 0.9;
+}
+
+.front, .back {
+    position: absolute;
+    height: 20vh;
+    width: 10vw;
+    border-radius: 12px;
+
+}
+
+/*.game-area {*/
+    /*float: right;*/
+    /*margin-right: 5%;*/
+/*}*/
+
+.hidden {
+    display: none;
+}
+
+.modal {
+
+}
+
+.modal-body > h1 {
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 8em;
+    color: #F8CB49;
+    text-shadow: 2px 2px black;
+
+    text-align: center;
+}
+
+.modal-content {
+    background-size: cover;
+    background-position: center;
+    background-image: url('images/halobg2.jpg');
+}
+
+.modal-button {
+    text-align: center;
+}
+
+.stats-area {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    color: #F8CB49;
+    text-shadow: 2px 2px black;
+    text-align: center;
+}
+
+.thumbnail {
+    background-color: transparent;
+    border: none;
+}
+
+.title {
+    font-family: 'Monoton', cursive;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3em;
+    color: #ba3dd2;
+    text-shadow: 2px 2px black;
+
+}
