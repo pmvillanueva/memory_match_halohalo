@@ -1,18 +1,19 @@
+
+html {
+    height: 100%;
+}
+
 body {
-    /*position: relative;*/
-    /*width: 100%;*/
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
+    position: relative;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-image: url('images/halobg5.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: 'Rajdhani', sans-serif;
-}
-
-html {
-    height: 100%;
 }
 
 h3 {
@@ -48,20 +49,10 @@ hr {
     height: 20vh;
     width: 10vw;
     border-radius: 12px;
-
 }
-
-/*.game-area {*/
-    /*float: right;*/
-    /*margin-right: 5%;*/
-/*}*/
 
 .hidden {
     display: none;
-}
-
-.modal {
-
 }
 
 .modal-body > h1 {
@@ -71,7 +62,6 @@ hr {
     font-size: 8em;
     color: #F8CB49;
     text-shadow: 2px 2px black;
-
     text-align: center;
 }
 
@@ -79,10 +69,6 @@ hr {
     background-size: cover;
     background-position: center;
     background-image: url('images/halobg2.jpg');
-}
-
-.modal-button {
-    text-align: center;
 }
 
 .stats-area {
@@ -106,5 +92,4 @@ hr {
     font-size: 3em;
     color: #ba3dd2;
     text-shadow: 2px 2px black;
-
 }

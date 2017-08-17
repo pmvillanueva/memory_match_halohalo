@@ -1,6 +1,6 @@
-/**
- * Created by Paul M. Villanueva on 7/24/17.
- */
+//====================
+//  Global Variables
+//====================
 
 var canClick = true;
 var firstCardClicked = null;
@@ -11,28 +11,35 @@ var accuracy = 0;
 var gamesPlayed = 0;
 var totalPossibleMatches = 9;
 
-//TARGET CARD CLASS ON LOAD TO ENABLE CARDCLICK FUNCTION
+//====================
+//   Document Ready
+//====================
+
 $(document).ready(function() {
     $('.card').click(card_clicked);
     $('.reset-button').click(reload_game);
     randomize();
 });
 
+//====================
+//     Functions
+//====================
+
 function card_clicked() {
-    if (canClick && $(this).find('.back').length) {
-        // HIDES FIRST CARD SELECTED
+    if (canClick === true && $(this).find('.back').length) {
+        //hides back of first card selected
         if(firstCardClicked === null){
-            $(this).find('.back').addClass('hidden');
             firstCardClicked = this;
-            //HIDES SECOND CARD SELECTED
-        } else {
             $(this).find('.back').addClass('hidden');
+        } else {
+            //hides back of second card selected
             secondCardClicked = this;
+            $(this).find('.back').addClass('hidden');
             attempts++;
             calculate_accuracy();
             display_stats();
 
-            //COMPARE FRONT OF CARDS TO CHECK FOR MATCH
+            //Compare front of cards to check for match
             if ($(firstCardClicked).find('.front').attr('src') === ($(secondCardClicked).find('.front').attr('src'))){
                 matches++;
                 calculate_accuracy();
@@ -40,7 +47,7 @@ function card_clicked() {
                 firstCardClicked = null;
                 secondCardClicked = null;
                 if(matches === totalPossibleMatches) {
-                    $('.modal').modal('show')
+                    $('.modal').modal('show');
                     gamesPlayed++;
                     display_stats();
                 } else {
@@ -49,26 +56,28 @@ function card_clicked() {
                 }
             } else {
                 // canClick = false;
-                //IF UNSUCCESSFUL MATCH REMOVE HIDDEN CLASS TO RE-REVEAL BACK OF FIRST AND SECOND CARDS
+                //if unsuccessful match remove hidden calss to re-reveal back of both cards
                 setTimeout(function(){
                     $(firstCardClicked).find('.back').removeClass('hidden');
                     $(secondCardClicked).find('.back').removeClass('hidden');
-                    //RESETS FIRSTCARDCLICKED AND SECONDCARDCLICKED BACK TO NULL SO THEY CAN BE SELECTED AGAIN
+                    //Resets firstcardclicked AND secondcardclicked back to null so they can be selected again
                     firstCardClicked = null;
                     secondCardClicked = null;
                     canClick = true;
-                    //RE-REVEAL BACK OF CARD AFTER 1 SECOND OF NO RESULTING MATCH
+                    //Re-reveal back of card after 1 second of no resulting match
                 }, 1000);
             }
         }
     }
 }
 
+//Calculate accuracy
 function calculate_accuracy() {
     accuracy = Math.floor(matches/attempts * 100);
     return accuracy;
 }
 
+//Display stats
 function display_stats() {
     $(".games-played").text(gamesPlayed);
     $(".attempts").text(attempts);
@@ -76,6 +85,7 @@ function display_stats() {
     $(".accuracy").text(accuracy + "%");
 }
 
+//Reset stats, restart game
 function reload_game() {
     attempts = 0;
     matches = 0;
@@ -85,6 +95,7 @@ function reload_game() {
     randomize();
 }
 
+//Randomize cards
 function randomize(){
     var divArray = $('.card-container').toArray();
     while(divArray.length > 0){
